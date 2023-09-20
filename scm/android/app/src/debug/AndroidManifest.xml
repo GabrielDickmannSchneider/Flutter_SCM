@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.scm">
+
+    <!-- Outras declarações e configurações do manifesto -->
+
+    <!-- A permissão INTERNET é necessária para que o aplicativo possa acessar a rede -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!-- Outras declarações e configurações do manifesto -->
+</manifest>
