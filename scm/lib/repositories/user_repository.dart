@@ -67,17 +67,29 @@ class UserRepository {
   static Future<List<SituacaoModel>> getSituation(String userEmail) async {
     try {
       Uri uri = Uri.parse(
-          "https://5175-177-73-136-51.ngrok-free.app/situation?emai=$userEmail"); // Substitua pela URL real da sua API
+          "https://5175-177-73-136-51.ngrok-free.app/situation?email=$userEmail"); // Substitua pela URL real da sua API
 
       http.Response response = await http
           .get(uri, headers: {"ngrok-skip-browser-warning": "accept"});
 
       if (response.statusCode == 200) {
-        List<dynamic> listSituacao = jsonDecode(response.body);
+        List listSituacao = jsonDecode(response.body);
+  
         List<SituacaoModel> situacoes = [];
 
         for (var situationJson in listSituacao) {
+          //print('situationJson> ${situationJson}');
+          // print('${situationJson['checagem_escola']} - ${situationJson['checagem_escola'].runtimeType}');
+          // print('${situationJson['checagem_sala']} - ${situationJson['checagem_sala'].runtimeType}');
+          //print('${situationJson['data_ponto']} - ${situationJson['data_ponto'].runtimeType}');
+          //print('${situationJson['hora_ponto']} - ${situationJson['hora_ponto'].runtimeType}');
+          //var teste = '${situationJson['data_ponto'].toString().split('T')[0]} ${situationJson['hora_ponto']}';
+          //print(teste);
+          //print('${DateTime.parse(situationJson['data_ponto'])} - ${DateTime.parse(situationJson['data_ponto']).runtimeType}');
+          //print('${DateTime.tryParse(teste)} - ${DateTime.tryParse(teste).runtimeType}');
+  
           SituacaoModel situacao = SituacaoModel.fromJson(situationJson);
+          //print('situacao>${situacao}');
           situacoes.add(situacao);
         }
         return situacoes;

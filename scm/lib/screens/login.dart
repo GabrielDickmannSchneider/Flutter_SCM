@@ -17,8 +17,8 @@ class _LoginScreenState extends State<LoginScreen>
   late AnimationController animationController;
   late Animation<double> animation;
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  TextEditingController userController = TextEditingController();
-  TextEditingController senhaController = TextEditingController();
+  TextEditingController userController = TextEditingController(text: 'gabriel@gmail.com');
+  TextEditingController senhaController = TextEditingController(text: 'teste123');
 
   bool loginFailed = false;
 

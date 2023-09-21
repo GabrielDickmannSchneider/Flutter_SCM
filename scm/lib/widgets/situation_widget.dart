@@ -7,13 +7,11 @@ import 'package:scm/repositories/user_repository.dart';
 
 class SituationWidget extends StatefulWidget {
   const SituationWidget({Key? key}) : super(key: key);
-
   @override
   State<SituationWidget> createState() => _SituationWidgetState();
 }
 
 class _SituationWidgetState extends State<SituationWidget> {
-  List<Map<String, dynamic>> dadosDaAPI = [];
   int totalDias = 0;
   int presenca = 0;
   int falta = 0;
@@ -30,22 +28,22 @@ class _SituationWidgetState extends State<SituationWidget> {
 
   Future<void> fetchData(context) async {
     UserModel currentUser = UserWidget.of(context)?.user ?? UserModel(email: "", senha: "");
-    print(currentUser);
 
     List situacoes = await UserRepository.getSituation(currentUser.email);
-    print(situacoes);
+    
     if (situacoes.isNotEmpty) {
-      situacoes = situacoes.where((situacao) => situacao != null).toList().cast<SituacaoModel>();
+      situacoes = situacoes.where((situacao) => situacao != null).toList();
       
       for (var registro in situacoes) {
-        print(registro);
-        if (registro['checagem_escola'] == 1 && registro['checagem_sala'] == 1) {
+     
+        if (registro.checagemEscola == 1 && registro.checagemSala == 1) {
           presenca++;
-        } else if (registro['checagem_escola'] == 0) {
+        } else if (registro.checagemEscola == 0) {
           falta++;
         }
         totalDias++;
       }
+      print('presencao:${presenca} - falta:${falta} - total:${totalDias}');
     } else {
       // const snackBar = SnackBar(
       //   content: Text('Você não esteve em nenhuma aula ainda.'),
