@@ -1,6 +1,6 @@
 class UserModel {
-  late int codEscola;
-  late int codResp;
+  late String escola;
+  late String resp;
   late String codRfid;
   late int nivPermissao;
   late int codUsuario;
@@ -16,8 +16,8 @@ class UserModel {
   UserModel.empty(): email = '', senha = '';
 
   UserModel.fromJson(Map<String, dynamic> json) {
-    codEscola = json["cod_escola"] ?? 0;
-    codResp = json["cod_resp"] ?? 0;
+    escola = json["nome_escola"] ?? "";
+    resp = json["nome_resp"] ?? "";
     codRfid = json["cod_rfid"] ?? "";
     nivPermissao = json["niv_permissao"] ?? 0;
     codUsuario = json["cod_usuario"] ?? 0;

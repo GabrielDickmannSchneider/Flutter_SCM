@@ -39,7 +39,7 @@ class _LoginFormState extends State<LoginForm> {
               controller: widget.userController,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: "Usuário",
+                labelText: "E-mail",
               ),
               validator: (value) {
                 if (value!.isEmpty) {

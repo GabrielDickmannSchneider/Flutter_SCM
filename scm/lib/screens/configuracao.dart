@@ -16,6 +16,13 @@ class _ConfiguracaoScreenState extends State<ConfiguracaoScreen> {
   @override
   Widget build(BuildContext context) {
     UserModel loggedInUser = UserWidget.of(context)!.user;
+    TextEditingController userName = TextEditingController(text: loggedInUser.nome);
+    TextEditingController userEmail = TextEditingController(text: loggedInUser.email);
+    TextEditingController userCPF = TextEditingController(text: loggedInUser.cpf);
+    TextEditingController userRes = TextEditingController(text: loggedInUser.resp);
+    TextEditingController userEnd = TextEditingController(text: loggedInUser.endereco);
+    TextEditingController userEsc = TextEditingController(text: loggedInUser.escola);
+    TextEditingController userTurma = TextEditingController(text: loggedInUser.turma);
     return Scaffold(
       key: _scaffoldKey,
       body: SizedBox(
@@ -117,6 +124,88 @@ class _ConfiguracaoScreenState extends State<ConfiguracaoScreen> {
                               ),
                             ),
                           ),
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 10),
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 15),
+                              child: TextFormField(
+                                controller: userName,
+                                decoration: const InputDecoration(
+                                  border: OutlineInputBorder(),
+                                  labelText: "Nome",
+                                ),
+                                enabled: false,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 15),
+                              child: TextFormField(
+                                controller: userEmail,
+                                decoration: const InputDecoration(
+                                  border: OutlineInputBorder(),
+                                  labelText: "E-mail",
+                                ),
+                                enabled: false,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 15),
+                              child: TextFormField(
+                                controller: userCPF,
+                                decoration: const InputDecoration(
+                                  border: OutlineInputBorder(),
+                                  labelText: "CPF",
+                                ),
+                                enabled: false,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 15),
+                              child: TextFormField(
+                                controller: userRes,
+                                decoration: const InputDecoration(
+                                  border: OutlineInputBorder(),
+                                  labelText: "Responsável",
+                                ),
+                                enabled: false,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 15),
+                              child: TextFormField(
+                                controller: userEnd,
+                                decoration: const InputDecoration(
+                                  border: OutlineInputBorder(),
+                                  labelText: "Endereço",
+                                ),
+                                enabled: false,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 15),
+                              child: TextFormField(
+                                controller: userEsc,
+                                decoration: const InputDecoration(
+                                  border: OutlineInputBorder(),
+                                  labelText: "Escola",
+                                ),
+                                enabled: false,
+                              ),
+                            ),
+                            TextFormField(
+                              controller: userTurma,
+                              decoration: const InputDecoration(
+                                border: OutlineInputBorder(),
+                                labelText: "Turma",
+                              ),
+                              enabled: false,
+                            ),
+                          ]
                         ),
                       ),
                     ],
