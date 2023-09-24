@@ -127,85 +127,90 @@ class _ConfiguracaoScreenState extends State<ConfiguracaoScreen> {
                         ),
                       ),
                       const SizedBox(height: 20),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 10),
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 15),
-                              child: TextFormField(
-                                controller: userName,
-                                decoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  labelText: "Nome",
+                      Expanded(
+                        child: SingleChildScrollView(
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 10),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 15),
+                                  child: TextFormField(
+                                    controller: userName,
+                                    decoration: const InputDecoration(
+                                      border: OutlineInputBorder(),
+                                      labelText: "Nome",
+                                    ),
+                                    enabled: false,
+                                  ),
                                 ),
-                                enabled: false,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 15),
-                              child: TextFormField(
-                                controller: userEmail,
-                                decoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  labelText: "E-mail",
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 15),
+                                  child: TextFormField(
+                                    controller: userEmail,
+                                    decoration: const InputDecoration(
+                                      border: OutlineInputBorder(),
+                                      labelText: "E-mail",
+                                    ),
+                                    enabled: false,
+                                  ),
                                 ),
-                                enabled: false,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 15),
-                              child: TextFormField(
-                                controller: userCPF,
-                                decoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  labelText: "CPF",
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 15),
+                                  child: TextFormField(
+                                    controller: userCPF,
+                                    decoration: const InputDecoration(
+                                      border: OutlineInputBorder(),
+                                      labelText: "CPF",
+                                    ),
+                                    enabled: false,
+                                  ),
                                 ),
-                                enabled: false,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 15),
-                              child: TextFormField(
-                                controller: userRes,
-                                decoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  labelText: "Responsável",
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 15),
+                                  child: TextFormField(
+                                    controller: userRes,
+                                    decoration: const InputDecoration(
+                                      border: OutlineInputBorder(),
+                                      labelText: "Responsável",
+                                    ),
+                                    enabled: false,
+                                  ),
                                 ),
-                                enabled: false,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 15),
-                              child: TextFormField(
-                                controller: userEnd,
-                                decoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  labelText: "Endereço",
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 15),
+                                  child: TextFormField(
+                                    controller: userEnd,
+                                    decoration: const InputDecoration(
+                                      border: OutlineInputBorder(),
+                                      labelText: "Endereço",
+                                    ),
+                                    enabled: false,
+                                  ),
                                 ),
-                                enabled: false,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 15),
-                              child: TextFormField(
-                                controller: userEsc,
-                                decoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  labelText: "Escola",
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 15),
+                                  child: TextFormField(
+                                    controller: userEsc,
+                                    decoration: const InputDecoration(
+                                      border: OutlineInputBorder(),
+                                      labelText: "Escola",
+                                    ),
+                                    enabled: false,
+                                  ),
                                 ),
-                                enabled: false,
-                              ),
+                                TextFormField(
+                                  controller: userTurma,
+                                  decoration: const InputDecoration(
+                                    border: OutlineInputBorder(),
+                                    labelText: "Turma",
+                                  ),
+                                  enabled: false,
+                                ),
+                              ]
                             ),
-                            TextFormField(
-                              controller: userTurma,
-                              decoration: const InputDecoration(
-                                border: OutlineInputBorder(),
-                                labelText: "Turma",
-                              ),
-                              enabled: false,
-                            ),
-                          ]
+                          ),
                         ),
                       ),
                     ],
