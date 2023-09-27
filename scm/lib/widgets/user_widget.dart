@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import "package:scm/Models/user_model.dart";
+import "package:scm/models/user_model.dart";
 
 // ignore: must_be_immutable
 class UserWidget extends InheritedWidget {

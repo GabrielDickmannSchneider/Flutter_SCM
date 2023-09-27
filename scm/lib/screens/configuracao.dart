@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:scm/Models/user_model.dart';
-import 'package:scm/Widgets/custom_drawer.dart';
-import 'package:scm/Widgets/user_widget.dart';
+import 'package:scm/models/user_model.dart';
+import 'package:scm/widgets/custom_drawer.dart';
+import 'package:scm/widgets/user_widget.dart';
 
 class ConfiguracaoScreen extends StatefulWidget {
   const ConfiguracaoScreen({super.key});

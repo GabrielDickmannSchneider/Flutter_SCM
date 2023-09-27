@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
-import 'package:scm/Models/situacao_model.dart';
-import 'package:scm/Models/user_model.dart';
-import 'package:scm/Widgets/user_widget.dart';
+import 'package:scm/models/situacao_model.dart';
+import 'package:scm/models/user_model.dart';
+import 'package:scm/widgets/user_widget.dart';
 import 'package:scm/repositories/user_repository.dart';
 
 class SituationWidget extends StatefulWidget {

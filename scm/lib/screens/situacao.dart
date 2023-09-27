@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:scm/Widgets/custom_drawer.dart';
-import 'package:scm/Widgets/situation_widget.dart';
+import 'package:scm/widgets/custom_drawer.dart';
+import 'package:scm/widgets/situation_widget.dart';
 
 class SituationScreen extends StatefulWidget {
   const SituationScreen({super.key});

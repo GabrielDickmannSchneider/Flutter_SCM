@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:scm/models/user_model.dart';
-import 'package:scm/screens/configuracao.dart';
-import 'package:scm/widgets/user_widget.dart';
+import 'package:scm/models/resp_model.dart';
 import 'package:scm/screens/calendario.dart';
-import "package:scm/screens/login.dart";
-import "package:scm/screens/home.dart";
-import 'package:scm/screens/situacao.dart';
+import 'package:scm/screens/home_resp.dart';
+import 'package:scm/screens/login.dart';
+import 'package:scm/widgets/resp_widget.dart';
 
-class CustomDrawer extends StatelessWidget {
-  const CustomDrawer({super.key});
+class CustomDrawerResp extends StatelessWidget {
+  const CustomDrawerResp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    UserModel loggedInUser = UserWidget.of(context)!.user;
+    RespModel loggedInResp = RespWidget.of(context)!.resp;
 
     return Theme(
         data: Theme.of(context).copyWith(
@@ -35,12 +33,12 @@ class CustomDrawer extends StatelessWidget {
                         color: const Color.fromRGBO(13, 41, 65, 1),
                         child: Column(
                           children: [
-                            if (loggedInUser.nome.isNotEmpty) // Verifica se loggedInUser está inicializado
+                            if (loggedInResp.nome.isNotEmpty) // Verifica se loggedInUser está inicializado
                               CircleAvatar(
                                 radius: 50,
                                 backgroundColor: const Color.fromRGBO(234, 238, 255, 1),
                                 child: Text(
-                                  loggedInUser.nome[0].toUpperCase(),
+                                  loggedInResp.nome[0].toUpperCase(),
                                   style: const TextStyle(
                                     fontSize: 36,
                                     color: Color.fromRGBO(13, 41, 65, 1),
@@ -48,17 +46,17 @@ class CustomDrawer extends StatelessWidget {
                                 ),
                               ),
                             const SizedBox(height: 10),
-                            if (loggedInUser.nome.isNotEmpty) // Verifica se loggedInUser está inicializado
+                            if (loggedInResp.nome.isNotEmpty) // Verifica se loggedInUser está inicializado
                               Text(
-                                loggedInUser.nome,
+                                loggedInResp.nome,
                                 style: const TextStyle(
                                   fontSize: 18,
                                   color: Color.fromRGBO(234, 238, 255, 1),
                                 ),
                               ),
-                            if (loggedInUser.nome.isNotEmpty) // Verifica se loggedInUser está inicializado
+                            if (loggedInResp.nome.isNotEmpty) // Verifica se loggedInUser está inicializado
                               Text(
-                                loggedInUser.email,
+                                loggedInResp.email,
                                 style: const TextStyle(
                                   fontSize: 16,
                                   color: Color.fromRGBO(234, 238, 255, 1),
@@ -80,7 +78,7 @@ class CustomDrawer extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
-                      builder: (context) => const HomeScreen(),
+                      builder: (context) => const HomeScreenResp(),
                     ),
                   );
                 },
@@ -92,11 +90,11 @@ class CustomDrawer extends StatelessWidget {
                     style: TextStyle(
                         color: Color.fromRGBO(13, 41, 65, 1), fontSize: 20)),
                 onTap: () {
-                  Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(
-                      builder: (context) => const ConfiguracaoScreen(),
-                    ),
-                  );
+                  // Navigator.of(context).pushReplacement(
+                  //   MaterialPageRoute(
+                  //     builder: (context) => const ConfiguracaoScreen(),
+                  //   ),
+                  // );
                 },
               ),
               ListTile(
@@ -120,11 +118,11 @@ class CustomDrawer extends StatelessWidget {
                     style: TextStyle(
                         color: Color.fromRGBO(13, 41, 65, 1), fontSize: 20)),
                 onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const SituationScreen(),
-                    ),
-                  );
+                  // Navigator.of(context).push(
+                  //   MaterialPageRoute(
+                  //     builder: (context) => const SituationScreen(),
+                  //   ),
+                  // );
                 },
               ),
               const Spacer(),

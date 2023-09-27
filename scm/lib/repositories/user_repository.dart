@@ -1,10 +1,11 @@
 import 'dart:convert';
-import 'package:scm/Models/user_model.dart';
 import 'package:http/http.dart' as http;
 import 'package:scm/models/situacao_model.dart';
+import 'package:scm/models/user_model.dart';
 
 class UserRepository {
-  static Future<UserModel> getUsers(UserModel userLogin) async {
+  static Future<List<UserModel>> getUsers(UserModel userLogin) async {
+    List<UserModel> listUser = [];
     try {
       Uri uri = Uri.parse("https://5175-177-73-136-51.ngrok-free.app/users");
 
@@ -21,10 +22,10 @@ class UserRepository {
           if (vrUser.mesmoUsuario(userLogin)) {
             // Chama o método getUserByName para buscar os detalhes do usuário pelo nome
             UserModel fetchedUser = await getUserByEmail(vrUser.email);
-
-            return fetchedUser;
+            listUser.add(fetchedUser);
           }
         }
+        return listUser;
       } else {
         throw ("Erro na solicitação. Código de status: ${vrResponse.statusCode}");
         //print("Erro na solicitação. Código de status: ${vrResponse.statusCode}");
@@ -32,7 +33,6 @@ class UserRepository {
     } catch (e) {
       throw("Erro ao fazer a solicitação HTTP: $e");
     }
-    return UserModel.empty();
   }
 
   static Future<UserModel> getUserByEmail(String userEmail) async {

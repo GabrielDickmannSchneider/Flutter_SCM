@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:scm/Widgets/custom_drawer.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:scm/widgets/custom_drawer.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class CalendarScreen extends StatefulWidget {

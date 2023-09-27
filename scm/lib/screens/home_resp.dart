@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:scm/widgets/custom_drawer.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:scm/widgets/custom_drawer_resp.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class HomeScreenResp extends StatefulWidget {
+  const HomeScreenResp({super.key});
 
-    @override
-  // ignore: library_private_types_in_public_api
-  _HomeScreenState createState() => _HomeScreenState();
+  @override
+  State<HomeScreenResp> createState() => _HomeScreenRespState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenRespState extends State<HomeScreenResp> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -100,7 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      drawer: const CustomDrawer(),
+      drawer: const CustomDrawerResp(),
     );
   }
 }

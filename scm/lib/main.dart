@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:scm/Screens/login.dart';
-import 'package:scm/Widgets/user_widget.dart';
+import 'package:scm/screens/login.dart';
+import 'package:scm/widgets/user_widget.dart';
 //import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
