@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scm/models/adm_model.dart';
 import 'package:scm/models/resp_model.dart';
 import 'package:scm/models/user_model.dart';
 import 'package:scm/widgets/login_form.dart';
@@ -15,8 +16,10 @@ class _LoginScreenState extends State<LoginScreen>
   late AnimationController animationController;
   late Animation<double> animation;
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  TextEditingController userController = TextEditingController(text: 'gabriel@gmail.com');
-  TextEditingController senhaController = TextEditingController(text: 'teste123');
+  TextEditingController userController =
+      TextEditingController(text: 'gabriel@gmail.com');
+  TextEditingController senhaController =
+      TextEditingController(text: 'teste123');
 
   bool loginFailed = false;
 
@@ -80,41 +83,23 @@ class _LoginScreenState extends State<LoginScreen>
                       onPressed: () async {
                         if (formKey.currentState!.validate()) {
                           UserModel user = UserModel(
-                            email: userController.text, 
-                            senha: senhaController.text
-                          );
+                              email: userController.text,
+                              senha: senhaController.text);
                           RespModel resp = RespModel(
-                            email: userController.text, 
-                            senha: senhaController.text
-                          );
+                              email: userController.text,
+                              senha: senhaController.text);
+                          AdmModel adm = AdmModel(
+                              email: userController.text,
+                              senha: senhaController.text);
                           bool userLoginValid = await user.verificarLogin();
                           bool respLoginValid = await resp.verificarLogin();
+                          bool admLoginValid = await adm.verificarLogin();
                           if (userLoginValid) {
                             print("Usuário");
-                          //   UserRepository.getUsers(UserModel(
-                          //     email: userController.text, 
-                          //     senha: senhaController.text
-                          // )).then((value) {
-                          //   if (value.email.isNotEmpty) {
-                          //     UserWidget.of(context)!.currentUser = value;
-
-                          //     animationController.forward();
-
-                          //     Navigator.of(context).pushReplacement(
-                          //       MaterialPageRoute(
-                          //         builder: (context) => const HomeScreen(),
-                          //       ),
-                          //     );
-                          //   } else {
-                          //     setState(() {
-                          //       loginFailed = true;
-                          //       Future.delayed(
-                          //           const Duration(seconds: 5), clearError);
-                          //     });
-                          //   }
-                          // });
                           } else if (respLoginValid) {
                             print("Responsável");
+                          } else if (admLoginValid) {
+                            print("Adiministrador");
                           }
                         }
                       },

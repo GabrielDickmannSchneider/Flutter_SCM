@@ -9,6 +9,7 @@ class RespModel {
   late String cpf;
   late String nomeFilho;
   late String emailFilho;
+  late int nivPermissao;
 
   RespModel({required this.email, required this.senha});
 
@@ -25,6 +26,7 @@ class RespModel {
     cpf = json["cpf_resp"] ?? "";
     nomeFilho = json["nome"] ?? "";
     emailFilho = json["email"] ?? "";
+    nivPermissao = json['niv_permissao'] ?? 0;
   }
 
   bool mesmoResp(RespModel resp) {

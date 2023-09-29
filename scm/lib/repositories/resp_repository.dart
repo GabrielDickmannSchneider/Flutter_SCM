@@ -20,9 +20,8 @@ class RespRepository {
 
           if (vrUser.mesmoResp(respLogin)) {
             // Chama o método getUserByName para buscar os detalhes do usuário pelo email
-            RespModel fetchedUser = await getRespByEmail(vrUser.email);
-            listResp.add(fetchedUser);
-            
+            RespModel fetchedResp = await getRespByEmail(vrUser.email);
+            listResp.add(fetchedResp);
           }
         }
         return listResp;
@@ -47,19 +46,19 @@ class RespRepository {
             List<Map<String, dynamic>>.from(jsonDecode(response.body));
 
         for (var usuarioJson in listaUsuarios) {
-          RespModel usuario = RespModel.fromJson(usuarioJson);
+          RespModel resp = RespModel.fromJson(usuarioJson);
 
-          if (usuario.email == respEmail  ) {
+          if (resp.email == respEmail) {
             // Verifica se o nome do usuário coincide com o userName solicitado
-            return usuario;
+            return resp;
           }
         }
       } else {
-        throw("Erro na solicitação. Código de status: ${response.statusCode}");
-      }      
+        throw ("Erro na solicitação. Código de status: ${response.statusCode}");
+      }
     } catch (e) {
-      throw("Erro ao fazer a solicitação HTTP: $e");
+      throw ("Erro ao fazer a solicitação HTTP: $e");
     }
     return RespModel.empty();
   }
-}  
+}
