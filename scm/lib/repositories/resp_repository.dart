@@ -6,7 +6,7 @@ class RespRepository {
   static Future<List<RespModel>> getResp(RespModel respLogin) async {
     List<RespModel> listResp = [];
     try {
-      Uri uri = Uri.parse("https://5175-177-73-136-51.ngrok-free.app/resps");
+      Uri uri = Uri.parse("https://9f65-177-73-136-51.ngrok-free.app/resps");
 
       http.Response vrResponse = await http
           .get(uri, headers: {"ngrok-skip-browser-warning": "accept"});
@@ -36,7 +36,7 @@ class RespRepository {
   static Future<RespModel> getRespByEmail(String respEmail) async {
     try {
       Uri uri = Uri.parse(
-          "https://5175-177-73-136-51.ngrok-free.app/resp?email=$respEmail"); // Substitua pela URL real da sua API
+          "https://9f65-177-73-136-51.ngrok-free.app/resp?email=$respEmail"); // Substitua pela URL real da sua API
 
       http.Response response = await http
           .get(uri, headers: {"ngrok-skip-browser-warning": "accept"});

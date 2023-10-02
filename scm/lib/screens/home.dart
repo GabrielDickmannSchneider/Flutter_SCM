@@ -5,14 +5,14 @@ import 'package:responsive_builder/responsive_builder.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
-    @override
+  @override
   // ignore: library_private_types_in_public_api
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

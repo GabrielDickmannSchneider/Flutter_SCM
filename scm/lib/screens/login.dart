@@ -1,8 +1,14 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:scm/models/adm_model.dart';
 import 'package:scm/models/resp_model.dart';
 import 'package:scm/models/user_model.dart';
+import 'package:scm/repositories/user_repository.dart';
+import 'package:scm/screens/home.dart';
 import 'package:scm/widgets/login_form.dart';
+import 'package:scm/widgets/user_widget.dart';
+
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -95,7 +101,12 @@ class _LoginScreenState extends State<LoginScreen>
                           bool respLoginValid = await resp.verificarLogin();
                           bool admLoginValid = await adm.verificarLogin();
                           if (userLoginValid) {
-                            print("Usuário");
+                            user = await UserRepository.getUserByEmail(userController.text);
+                            UserWidget.of(context)!.currentUser = user;                      
+                              Navigator.of(context).pushReplacement(
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const HomeScreen()));
                           } else if (respLoginValid) {
                             print("Responsável");
                           } else if (admLoginValid) {

@@ -7,7 +7,7 @@ class UserModel {
   late int nivPermissao;
   late int codUsuario;
   late String cpf;
-  late String nome;
+  late String nome = "";
   late String turma;
   late String endereco;
   late String senha;
