@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:scm/models/horas_model.dart';
 import 'package:scm/models/situacao_model.dart';
 import 'package:scm/models/user_model.dart';
 
@@ -82,6 +83,32 @@ class UserRepository {
           situacoes.add(situacao);
         }
         return situacoes;
+      } else {
+        return [];
+      }
+    } catch (e) {
+      return [];
+    }
+  }
+
+  static Future<List<HorasModel>> getHour(String userEmail) async {
+    try {
+      Uri uri = Uri.parse(
+          "https://9f65-177-73-136-51.ngrok-free.app/hour?email=$userEmail"); // Substitua pela URL real da sua API
+
+      http.Response response = await http
+          .get(uri, headers: {"ngrok-skip-browser-warning": "accept"});
+
+      if (response.statusCode == 200) {
+        List listHour = jsonDecode(response.body);
+  
+        List<HorasModel> horas = [];
+
+        for (var hourJson in listHour) {
+          HorasModel hora = HorasModel.fromJson(hourJson);
+          horas.add(hora);
+        }
+        return horas;
       } else {
         return [];
       }

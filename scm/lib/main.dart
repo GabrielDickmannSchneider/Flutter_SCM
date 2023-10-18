@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:scm/screens/login.dart';
 import 'package:scm/widgets/user_widget.dart';
-//import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,11 +13,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return UserWidget(
       child: MaterialApp(
-        // localizationsDelegates: [
-        //   GlobalMaterialLocalizations.delegate,
-        //   GlobalWidgetsLocalizations.delegate
-        // ],
-        // supportedLocales: [const Locale('pt', 'BR')],
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.blue,

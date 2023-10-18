@@ -7,8 +7,8 @@ import "package:scm/screens/login.dart";
 import "package:scm/screens/home.dart";
 import 'package:scm/screens/situacao.dart';
 
-class CustomDrawer extends StatelessWidget {
-  const CustomDrawer({super.key});
+class CustomDrawerResp extends StatelessWidget {
+  const CustomDrawerResp({super.key});
 
   @override
   Widget build(BuildContext context) {
